@@ -1,0 +1,29 @@
+==65946== Memcheck, a memory error detector
+==65946== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==65946== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==65946== Command: ./debugProgram christopherrigoni@umail.ucsb.edu
+==65946== 
+==65946== 
+==65946== HEAP SUMMARY:
+==65946==     in use at exit: 5,764 bytes in 118 blocks
+==65946==   total heap usage: 229 allocs, 111 frees, 84,674 bytes allocated
+==65946== 
+==65946== 1,108 bytes in 20 blocks are definitely lost in loss record 1 of 2
+==65946==    at 0x484377A: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==65946==    by 0x401776: someOtherFunction(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (main.cpp:14)
+==65946==    by 0x401AED: main (main.cpp:93)
+==65946== 
+==65946== 4,656 bytes in 98 blocks are definitely lost in loss record 2 of 2
+==65946==    at 0x484377A: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==65946==    by 0x40376C: dataLost(int, bool) (debugFunctions.cpp:30)
+==65946==    by 0x401AC9: main (main.cpp:82)
+==65946== 
+==65946== LEAK SUMMARY:
+==65946==    definitely lost: 5,764 bytes in 118 blocks
+==65946==    indirectly lost: 0 bytes in 0 blocks
+==65946==      possibly lost: 0 bytes in 0 blocks
+==65946==    still reachable: 0 bytes in 0 blocks
+==65946==         suppressed: 0 bytes in 0 blocks
+==65946== 
+==65946== For lists of detected and suppressed errors, rerun with: -s
+==65946== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
